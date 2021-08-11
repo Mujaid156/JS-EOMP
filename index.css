@@ -12,7 +12,8 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
   font-family: sans-serif;
-  background-color: aqua;
+  background-image: url(./images/pexels-frank-cone-2258536.jpg);
+  background-size: cover;
 }
 
 .login {
@@ -26,13 +27,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
+  border: 5px solid black;
 }
 
 .log {
   display: flex;
   flex-direction: column;
-  margin-top: 1%;
+  margin-top: 5%;
+  font-size: 15px;
+  padding: 10px 10%;
+  width: 100%;
+  background-color: black;
+  color: white;
 }
 
 .btn {
@@ -45,9 +51,25 @@ body {
   padding: 15px 10%;
   width: 100%;
   transition: ease-in 0.3s;
+  margin-top: 5%;
+  border-radius: 25px;
 }
 
 .btn:hover {
   background-color: black;
   color: white;
+}
+
+.head {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.regi {
+  margin-top: 2%;
+  display: flex;
+}
+
+.regi a {
+  text-decoration: none;
 }
