@@ -16,7 +16,7 @@ body {
   background-size: cover;
 }
 
-.login {
+.window {
   background: rgba(255, 255, 255, 0.45);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(1.5px);
@@ -30,7 +30,7 @@ body {
   border: 5px solid black;
 }
 
-.log {
+.add {
   display: flex;
   flex-direction: column;
   margin-top: 5%;
@@ -58,22 +58,4 @@ body {
 .btn:hover {
   background-color: black;
   color: white;
-}
-
-.head {
-  text-transform: uppercase;
-  margin-bottom: 5%;
-}
-
-.regi {
-  margin-top: 2%;
-  display: flex;
-}
-
-.regi a {
-  text-decoration: none;
-}
-
-.button {
-  text-decoration: none;
 }

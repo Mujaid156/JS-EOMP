@@ -13,7 +13,10 @@
         <h1>Register to start shopping</h1>
       </div>
       <div>
-        <form action="">
+        <form
+          action="https://shopping1-app.herokuapp.com/user-registration/"
+          method="POST"
+        >
           <input
             class="log"
             type="text"
@@ -40,14 +43,17 @@
             placeholder="Enter password"
           />
           <input type="checkbox" onclick="myFunction()" /> Show Password
-        </form>
-        <div>
+
           <button class="btn" type="submit">Register</button>
-        </div>
+        </form>
+        <div></div>
       </div>
       <div class="regi">
         <p>Have an account?</p>
-        <a href="/index.html">Sign in</a>
+        <a href="./login.html">Sign in</a>
+      </div>
+      <div class="main">
+        <a class="button" href="/main.html">Home</a>
       </div>
     </div>
     <script src="/js/register.js"></script>
