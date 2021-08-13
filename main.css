@@ -15,6 +15,35 @@ body {
   background-image: url(/images/pexels-frank-cone-2258536.jpg);
   background-size: cover;
 }
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: blue;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: aqua;
+  padding: 20px;
+  transition: all 0.8 linear;
+}
+
+.nav-links li a:hover {
+  color: blueviolet;
+  background-color: red;
+}
+
 .login {
   background: rgba(255, 255, 255, 0.45);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -27,6 +56,7 @@ body {
   justify-content: center;
   align-items: center;
   border: 5px solid black;
+  gap: 20px;
 }
 
 h1 {
@@ -44,7 +74,7 @@ h1 {
   padding: 10px 5%;
   width: 30%;
   transition: ease-in 0.3s;
-  margin-top: 5%;
+
   border-radius: 25px;
   display: flex;
   flex-direction: column;
