@@ -13,10 +13,60 @@
         <li><a href="/main.html">Home</a></li>
         <li><a href="/html/register.html">Register</a></li>
         <li><a href="/html/login.html">Login</a></li>
-        <li><a href="/html/add_products.html">Add Products</a></li>
+        <li id="myBtn">Add Products</li>
       </ul>
     </nav>
     <div id="products-container"></div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="window">
+          <div>
+            <div>
+              <h1>Adding Product</h1>
+            </div>
+            <div>
+              <form
+                action="https://shopping1-app.herokuapp.com/products/"
+                method="POST"
+              >
+                <input
+                  class="add"
+                  type="text"
+                  name="product_name"
+                  placeholder="Product Name"
+                />
+                <input
+                  class="add"
+                  type="text"
+                  name="product_type"
+                  placeholder="Product Type"
+                />
+                <input
+                  class="add"
+                  type="text"
+                  name="description"
+                  placeholder="Description"
+                />
+                <input
+                  class="add"
+                  type="text"
+                  name="product_quantity"
+                  placeholder="Product Quantity"
+                />
+                <input
+                  class="add"
+                  type="text"
+                  name="product_price"
+                  placeholder="Product Price"
+                />
+                <button class="btn" type="submit">Add</button>
+              </form>
+            </div>
+            <span class="close">&times;</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="/js/show_products.js"></script>
   </body>
 </html>

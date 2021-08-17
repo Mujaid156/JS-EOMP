@@ -1,45 +1,54 @@
+let products = [];
+let cart = [];
+console.log(cart);
+
 fetch("https://shopping1-app.herokuapp.com/show-products/")
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
+    let products = data.data;
     let productContainer = document.querySelector("#products-container");
     productContainer.innerHTML = "";
-    data["data"].forEach((product) => {
+    products.forEach((product) => {
       console.log(product);
       productContainer.innerHTML += `
         <div class="product">
-        <h4 class="product-name"> ${product[1]} </h4>
-        <p class="product-description">${product[3]}</p>
-        <p class="product-type">${product[2]}</p>
-        <p class="product-price">${product[5]}</p>
+        <div class="product-content">
+          <h4 class="product-name"> ${product[1]} </h4>
+          <p class="product-description">${product[3]}</p>
+          <p class="product-type">${product[2]}</p>
+          <p class="product-price">${product[5]}</p>
+          <button onclick="addToCart(${product[0]})">Add to Cart</button>
+          </div>
         </div>`;
     });
   });
 
-// let prod_url = "https://abdul-malik-api.herokuapp.com/api/show-products/";
+let modal = document.getElementById("myModal");
 
-// function showProducts(url) {
-//   fetch(url)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
+let btn = document.getElementById("myBtn");
 
-//       let products = data.data;
+let span = document.getElementsByClassName("close")[0];
 
-//       let show = document.querySelector(".show_products");
+btn.onclick = function () {
+  modal.style.display = "block";
+};
 
-//       products.forEach((product) => {
-//         console.log(product);
-//         show.innerHTML += `
-//         <div class="prod_container">
-//         <img src="${product.Picture}" alt="">
-//         <h1 class="name"> <span class="prod_numb">${product.prod_list}.</span> ${product.Name}</h1>
-//         <h2 class="type">${product.Type}</h2>
-//         <p class="description" >${product.Description}</p>
-//         <h3 class="price">${product.Price}</h3>
-//         </div>`;
-//       });
-//     });
-// }
+span.onclick = function () {
+  modal.style.display = "none";
+};
 
-// showProducts(prod_url);
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+function addToCart(id) {
+  let product = products.find((item) => {
+    return item.id == id;
+  });
+  console.log(product);
+  cart.push(product);
+  console.log(cart);
+}
