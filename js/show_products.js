@@ -17,7 +17,7 @@ fetch("https://shopping1-app.herokuapp.com/show-products/")
           <h4 class="product-name"> ${product[1]} </h4>
           <p class="product-description">${product[3]}</p>
           <p class="product-type">${product[2]}</p>
-          <p class="product-price">${product[5]}</p>
+          <p class="product-price">R${product[5]}</p>
           <button onclick="addToCart(${product[0]})">Add to Cart</button>
           </div>
         </div>`;
@@ -46,9 +46,21 @@ window.onclick = function (event) {
 
 function addToCart(id) {
   let product = products.find((item) => {
-    return item.id == id;
+    return item[0] == id;
   });
   console.log(product);
   cart.push(product);
   console.log(cart);
+}
+
+function searchForProducts() {
+  let searchTerm = document.querySelector("#searchTerm").value;
+  console.log(searchTerm);
+
+  let searchedProducts = products.filter((product) =>
+    product[1].toLowercase().contains(searchTerm.toLowercase)
+  );
+  console.log(searchedProducts);
+
+  data(searchedProducts);
 }

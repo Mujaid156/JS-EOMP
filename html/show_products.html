@@ -16,6 +16,12 @@
         <li id="myBtn">Add Products</li>
       </ul>
     </nav>
+    <div id="filters">
+      <form onsubmit="event.preventDefault(); searchForProducts();">
+        <input type="text" required id="searchTerm" />
+        <button type="submit">Find</button>
+      </form>
+    </div>
     <div id="products-container"></div>
     <div id="myModal" class="modal">
       <div class="modal-content">
